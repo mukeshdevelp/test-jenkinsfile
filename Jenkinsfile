@@ -46,6 +46,13 @@ pipeline {
       }
     }
 
+    stage('Install Ansible Collections') {
+      steps {
+        // Install the required Ansible collections
+        sh 'ansible-galaxy collection install community.aws'
+      }
+    }
+
     stage('Generate Ansible Inventory') {
       steps {
         script {
