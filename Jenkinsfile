@@ -29,7 +29,20 @@ pipeline {
 
     stage('Terraform Apply') {
       steps {
-        sh 'terraform destroy -auto-approve'
+        sh '''
+        terraform apply -auto-approve
+        terraform refresh   # or terraform apply -auto-approve
+        terraform output -json > outputs.json
+      '''
+      }
+    }
+    stage('Parse Terraform Outputs') {
+      steps {
+        script {
+          def outputs = readJSON file: 'outputs.json'
+          env.INSTANCE_ID = outputs.instance_id.value
+          echo "Instance ID is ${env.INSTANCE_ID}"
+        }
       }
     }
 
