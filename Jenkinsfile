@@ -53,22 +53,27 @@ pipeline {
       }
     }
 
-    stage('Generate Ansible Inventory') {
+    stage('Create Dynamic Inventory') {
       steps {
         script {
-          def instanceId = sh(script: 'terraform output -raw instance_id', returnStdout: true).trim()
-
-          writeFile file: env.INVENTORY_FILE, text: """\
-[ssm_instances]
-${instanceId}
-
-[ssm_instances:vars]
-ansible_connection=community.aws.aws_ssm
-ansible_user=ec2-user
-"""
-        }
-      }
+          // Write the aws_ec2.yml inventory plugin config
+          writeFile file: 'aws_ec2.yml', text: '''
+---
+plugin: amazon.aws.aws_ec2
+regions:
+  - eu-west-1
+filters:
+  tag:environment: staging
+hostnames:
+  - instance-id
+compose:
+  ansible_host: instance_id
+  ansible_connection: community.aws.aws_ssm
+'''
+          echo "Dynamic AWS EC2 inventory file created."
     }
+  }
+}
 
     stage('Run Ansible Playbook') {
       steps {

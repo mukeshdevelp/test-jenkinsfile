@@ -1,0 +1,11 @@
+---
+plugin: amazon.aws.aws_ec2
+regions:
+  - eu-west-1
+filters:
+  tag:Environment: staging  # or your specific tags
+hostnames:
+  - instance-id  # or 'dns-name', 'public-ip-address', 'private-ip-address'
+compose:
+  ansible_host: instance_id  # Use 'public_ip_address' if directly reachable via network
+  ansible_connection: community.aws.aws_ssm

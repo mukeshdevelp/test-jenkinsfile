@@ -79,6 +79,7 @@ resource "aws_instance" "example" {
   key_name               = "ireland"  # replace with your key pair name
 
   tags = {
+    environment = "staging"
     Name = "SSM-enabled-instance"
   }
 }
