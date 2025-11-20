@@ -6,13 +6,7 @@
   become: yes
 
   tasks:
-    - name: Check hostname via SSM
-      amazon.aws.aws_ssm:
-        targets: "{{ inventory_hostname }}"
-        document_name: AWS-RunShellScript
-        commands:
-          - hostname
-
+    
     - name: Install nginx via SSM
       package:
         
