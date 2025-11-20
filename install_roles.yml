@@ -7,6 +7,12 @@
 
 
   tasks:
+    - name: Check SSM
+      community.aws.aws_ssm:
+        targets: "{{ inventory_hostname }}"
+        document_name: AWS-RunShellScript
+        commands:
+          - hostname
     - name: Install nginx
       package:
         name: nginx

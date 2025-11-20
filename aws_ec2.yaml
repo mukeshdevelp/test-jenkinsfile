@@ -1,21 +1,8 @@
----
 plugin: amazon.aws.aws_ec2
-
 regions:
   - eu-west-1
-
-filters:
-  tag:environment:
-    - staging
-
-strict: false
-
 hostnames:
-  - instance_id
-
+  - private_ip_address   # or use 'public_ip_address' if needed
 keyed_groups:
   - key: tags.environment
-    prefix: environment_
-
-compose:
-  ansible_host: private_ip_address
+    prefix: tag_environment_
