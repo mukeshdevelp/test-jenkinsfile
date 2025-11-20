@@ -60,36 +60,7 @@ pipeline {
 
     
 
-    stage('Create Dynamic Inventory') {
-      steps {
-        script {
-          writeFile file: 'aws_ec2.yaml', text: '''
----
-plugin: amazon.aws.aws_ec2
-
-regions:
-  - eu-west-1
-
-filters:
-  tag:environment:
-    - staging
-
-strict: false
-
-hostnames:
-  - instance_id
-
-keyed_groups:
-  - key: tags.environment
-    prefix: tag_environment_
-
-compose:
-  ansible_host: private_ip_address
-
-'''
-        }
-      }
-    }
+    
 
     stage('Run Ansible') {
       steps {
