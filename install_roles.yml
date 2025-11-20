@@ -4,7 +4,7 @@
   gather_facts: yes
   connection:  community.aws.aws_ssm  # Use the AWS SSM connection plugin for Ansible
   become: yes
--
+
 
   tasks:
     - name: Install nginx
