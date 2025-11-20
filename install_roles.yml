@@ -8,16 +8,10 @@
   tasks:
     
     - name: Install nginx
-      amazon.aws.aws_ssm:
-        targets: "{{ inventory_hostname }}"
-        document_name: AWS-RunShellScript
-        commands:
+      commands:
           - sudo yum install -y nginx
 
     - name: Ensure nginx is running
-      amazon.aws.aws_ssm:
-        targets: "{{ inventory_hostname }}"
-        document_name: AWS-RunShellScript
-        commands:
+      commands:
           - sudo systemctl enable nginx
           - sudo systemctl start nginx
