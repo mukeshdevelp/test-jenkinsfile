@@ -57,7 +57,12 @@ resource "aws_security_group" "sg" {
   name        = "example_sg"
   description = "Allow SSH inbound traffic"
   vpc_id      = aws_vpc.example_vpc.id # replace with your VPC ID
-
+    ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   
   egress {
     from_port   = 0
