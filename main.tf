@@ -56,7 +56,7 @@ resource "aws_instance" "example" {
   instance_type          = "t3.micro"
   iam_instance_profile   = aws_iam_instance_profile.ssm_instance_profile.name
   vpc_security_group_ids = [aws_security_group.sg.id]
-  key_name               = "ireland.pem"  # replace with your key pair name
+  key_name               = "ireland"  # replace with your key pair name
 
   tags = {
     Name = "SSM-enabled-instance"
