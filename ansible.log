@@ -1,0 +1,6 @@
+2025-11-20 16:29:27,989 p=120951 u=mukesh n=ansible WARNING| [WARNING]: Unable to parse /home/mukesh/Desktop/test/aws_ec2.yaml as an inventory source
+
+2025-11-20 16:29:27,989 p=120951 u=mukesh n=ansible WARNING| [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2025-11-20 16:29:27,993 p=120951 u=mukesh n=ansible INFO| @all:
+  |--@ungrouped:
