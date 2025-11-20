@@ -54,7 +54,7 @@ pipeline {
       ansible-galaxy collection install amazon.aws
       ansible-galaxy collection install community.aws
        
-        ansible-playbook -i aws_ec2.yaml install_roles.yml -vvv
+        ansible-playbook -i /var/lib/jenkins/workspace/test-sm-1/aws_ec2.yaml install_roles.yml -vvv
     '''
   }
 }
