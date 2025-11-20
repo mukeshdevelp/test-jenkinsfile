@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     AWS_CREDS = credentials('aws-credentials')
-    AWS_DEFAULT_REGION = 'us-east-1'  // set your AWS region
+    AWS_DEFAULT_REGION = 'eu-west-1'  // set your AWS region
     INVENTORY_FILE = 'ssm_inventory.ini'
   }
 
@@ -22,7 +22,7 @@ pipeline {
                     aws s3 ls
                     '''
                 }
-                
+
         sh 'terraform init'
       }
     }
