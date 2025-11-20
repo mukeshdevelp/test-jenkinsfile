@@ -58,7 +58,7 @@ pipeline {
     #!/bin/bash
        python3 -m venv venv
 . venv/bin/activate
-pip install boto3 botocore --user
+pip install boto3 botocore
       
      
 
