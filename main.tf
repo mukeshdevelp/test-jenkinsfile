@@ -52,7 +52,7 @@ resource "aws_security_group" "sg" {
 
 # EC2 Instance resource
 resource "aws_instance" "example" {
-  ami                    = "ami-0c02fb55956c7d316" # Amazon Linux 2 in us-east-1, update for your region
+  ami                    = "ami-08b6a2983df6e9e25" # Amazon Linux 2 in us-east-1, update for your region
   instance_type          = "t3.micro"
   iam_instance_profile   = aws_iam_instance_profile.ssm_instance_profile.name
   vpc_security_group_ids = [aws_security_group.sg.id]
