@@ -4,7 +4,7 @@ pipeline {
   environment {
     AWS_CREDS = credentials('aws-credentials')
     AWS_DEFAULT_REGION = 'eu-west-1'  // set your AWS region
-    INVENTORY_FILE = 'ssm_inventory.ini'
+    //INVENTORY_FILE = 'ssm_inventory.ini'
   }
 
   stages {
@@ -70,7 +70,7 @@ pip install boto3 botocore
       steps {
         script {
           // Write the aws_ec2.yml inventory plugin config
-          writeFile file: 'aws_ec2.yml', text: '''
+          writeFile file: 'aws_ec2.yaml', text: '''
 ---
 plugin: amazon.aws.aws_ec2
 regions:
@@ -89,7 +89,7 @@ compose:
 }
   stage('Run Ansible Playbook') {
   steps {
-    sh 'ansible-playbook -i aws_ec2.yml install_roles.yml'
+    sh 'ansible-playbook -i aws_ec2.yaml install_roles.yml'
   }
   }
 
