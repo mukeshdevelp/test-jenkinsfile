@@ -42,17 +42,23 @@ pipeline {
         }
       }
     }
+    stage('Install AWS SDK for Python & Ansible') {
+  steps {
+    sh '''
+      python3 -m venv venv
+      . venv/bin/activate
 
-    stage('Setup Python Environment') {
-      steps {
-        sh '''
-          python3 -m venv venv
-          . venv/bin/activate
-          pip install boto3 botocore
-          pip install ansible amazon.aws
-        '''
-      }
-    }
+      pip install --upgrade pip
+      pip install boto3 botocore ansible
+
+      ansible-galaxy collection install amazon.aws
+      ansible-galaxy collection install community.aws
+    '''
+  }
+}
+
+
+    
 
     stage('Create Dynamic Inventory') {
       steps {
