@@ -56,7 +56,7 @@ resource "aws_subnet" "example_subnet" {
 resource "aws_security_group" "sg" {
   name        = "example_sg"
   description = "Allow SSH inbound traffic"
-  vpc_id      = "vpc-0e6f0f139e00db2e3" # replace with your VPC ID
+  vpc_id      = aws_vpc.example_vpc.id # replace with your VPC ID
 
   
 
