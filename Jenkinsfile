@@ -53,6 +53,8 @@ pipeline {
 
       ansible-galaxy collection install amazon.aws
       ansible-galaxy collection install community.aws
+       
+        ansible-playbook -i aws_ec2.yaml install_roles.yml -vvv
     '''
   }
 }
@@ -62,13 +64,6 @@ pipeline {
 
     
 
-    stage('Run Ansible') {
-      steps {
-        sh '''
-          . venv/bin/activate
-          ansible-playbook -i aws_ec2.yaml install_roles.yml -vvv
-        '''
-      }
-    }
+    
   }
 }
