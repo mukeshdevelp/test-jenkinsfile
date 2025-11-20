@@ -34,6 +34,24 @@ resource "aws_iam_instance_profile" "ssm_instance_profile" {
   role = aws_iam_role.ssm_role.name
 }
 
+# Create a VPC
+resource "aws_vpc" "example_vpc" {
+  cidr_block = "10.0.0.0/16"
+  tags = {
+    Name = "example-vpc"
+  }
+}
+
+# Create a subnet inside the above VPC
+resource "aws_subnet" "example_subnet" {
+  vpc_id     = aws_vpc.example_vpc.id
+  cidr_block = "10.0.1.0/24"
+  availability_zone = "us-east-1a"
+  tags = {
+    Name = "example-subnet"
+  }
+}
+
 # Security group allowing SSH access for testing (optional)
 resource "aws_security_group" "sg" {
   name        = "example_sg"
@@ -54,6 +72,8 @@ resource "aws_security_group" "sg" {
 resource "aws_instance" "example" {
   ami                    = "ami-08b6a2983df6e9e25" # Amazon Linux 2 in us-east-1, update for your region
   instance_type          = "t3.micro"
+
+  subnet_id              = aws_subnet.example_subnet.id
   iam_instance_profile   = aws_iam_instance_profile.ssm_instance_profile.name
   vpc_security_group_ids = [aws_security_group.sg.id]
   key_name               = "ireland"  # replace with your key pair name
