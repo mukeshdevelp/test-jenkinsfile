@@ -1,0 +1,17 @@
+---
+- name: Configure EC2 instance via SSM
+  hosts: all
+  gather_facts: no
+  connection: aws_ssm   # Use the AWS SSM connection plugin for Ansible
+  become: yes
+
+  tasks:
+    - name: Install nginx
+      package:
+        name: nginx
+        state: present
+
+    - name: Ensure nginx is running
+      service:
+        name: nginx
+        state: started
