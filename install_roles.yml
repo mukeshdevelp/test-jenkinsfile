@@ -14,16 +14,15 @@
           - hostname
 
     - name: Install nginx via SSM
-      amazon.aws.aws_ssm:
-        targets: "{{ inventory_hostname }}"
-        document_name: AWS-RunShellScript
-        commands:
-          - sudo yum install -y nginx
+      package:
+        
+        name: nginx
+        state: present
+        update_cache: yes
 
     - name: Ensure nginx is running via SSM
-      amazon.aws.aws_ssm:
-        targets: "{{ inventory_hostname }}"
-        document_name: AWS-RunShellScript
-        commands:
-          - sudo systemctl enable nginx
-          - sudo systemctl start nginx
+      
+      service:
+        name: nginx
+        state: started
+        enabled: yes
