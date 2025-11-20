@@ -4,3 +4,323 @@
 
 2025-11-20 16:29:27,993 p=120951 u=mukesh n=ansible INFO| @all:
   |--@ungrouped:
+2025-11-20 17:09:14,767 p=137680 u=mukesh n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2025-11-20 17:09:14,767 p=137680 u=mukesh n=ansible INFO| [DEPRECATION WARNING]: Passing `disable_lookups` to `template` is deprecated. This feature will be removed from ansible-core version 2.23.
+
+2025-11-20 17:09:14,781 p=137680 u=mukesh n=botocore.credentials INFO| Found credentials in shared credentials file: ~/.aws/credentials
+2025-11-20 17:09:16,259 p=137680 u=mukesh n=ansible INFO| @all:
+  |--@ungrouped:
+  |--@aws_ec2:
+  |  |--instance_id
+  |--@tag_environment__staging:
+  |  |--instance_id
+2025-11-20 17:09:39,264 p=137857 u=mukesh n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2025-11-20 17:09:39,264 p=137857 u=mukesh n=ansible INFO| [DEPRECATION WARNING]: Passing `disable_lookups` to `template` is deprecated. This feature will be removed from ansible-core version 2.23.
+
+2025-11-20 17:09:39,278 p=137857 u=mukesh n=botocore.credentials INFO| Found credentials in shared credentials file: ~/.aws/credentials
+2025-11-20 17:09:40,429 p=137857 u=mukesh n=ansible WARNING| [WARNING]: Found variable using reserved name 'tags'.
+Origin: <unknown>
+
+tags
+
+
+2025-11-20 17:09:40,431 p=137857 u=mukesh n=ansible INFO| {
+    "_meta": {
+        "hostvars": {
+            "instance_id": {
+                "ami_launch_index": 0,
+                "ansible_host": {
+                    "__ansible_unsafe": "10.0.1.143"
+                },
+                "architecture": {
+                    "__ansible_unsafe": "x86_64"
+                },
+                "block_device_mappings": [
+                    {
+                        "device_name": {
+                            "__ansible_unsafe": "/dev/xvda"
+                        },
+                        "ebs": {
+                            "attach_time": "2025-11-20T09:33:03+00:00",
+                            "delete_on_termination": true,
+                            "status": {
+                                "__ansible_unsafe": "attached"
+                            },
+                            "volume_id": {
+                                "__ansible_unsafe": "vol-0db8432eae6e45f93"
+                            }
+                        }
+                    }
+                ],
+                "boot_mode": {
+                    "__ansible_unsafe": "uefi-preferred"
+                },
+                "capacity_reservation_specification": {
+                    "capacity_reservation_preference": {
+                        "__ansible_unsafe": "open"
+                    }
+                },
+                "client_token": {
+                    "__ansible_unsafe": "terraform-20251120093301825900000001"
+                },
+                "cpu_options": {
+                    "core_count": 1,
+                    "threads_per_core": 2
+                },
+                "current_instance_boot_mode": {
+                    "__ansible_unsafe": "uefi"
+                },
+                "ebs_optimized": false,
+                "ena_support": true,
+                "enclave_options": {
+                    "enabled": false
+                },
+                "hibernation_options": {
+                    "configured": false
+                },
+                "hypervisor": {
+                    "__ansible_unsafe": "xen"
+                },
+                "iam_instance_profile": {
+                    "arn": {
+                        "__ansible_unsafe": "arn:aws:iam::242201269239:instance-profile/example_ssm_instance_profile"
+                    },
+                    "id": {
+                        "__ansible_unsafe": "AIPATQZCSCP3YCJJ462P6"
+                    }
+                },
+                "image_id": {
+                    "__ansible_unsafe": "ami-08b6a2983df6e9e25"
+                },
+                "instance_id": {
+                    "__ansible_unsafe": "i-06ce621d200df7dc2"
+                },
+                "instance_type": {
+                    "__ansible_unsafe": "t3.micro"
+                },
+                "key_name": {
+                    "__ansible_unsafe": "ireland"
+                },
+                "launch_time": "2025-11-20T09:33:02+00:00",
+                "maintenance_options": {
+                    "auto_recovery": {
+                        "__ansible_unsafe": "default"
+                    },
+                    "reboot_migration": {
+                        "__ansible_unsafe": "default"
+                    }
+                },
+                "metadata_options": {
+                    "http_endpoint": {
+                        "__ansible_unsafe": "enabled"
+                    },
+                    "http_protocol_ipv6": {
+                        "__ansible_unsafe": "disabled"
+                    },
+                    "http_put_response_hop_limit": 2,
+                    "http_tokens": {
+                        "__ansible_unsafe": "required"
+                    },
+                    "instance_metadata_tags": {
+                        "__ansible_unsafe": "disabled"
+                    },
+                    "state": {
+                        "__ansible_unsafe": "applied"
+                    }
+                },
+                "monitoring": {
+                    "state": {
+                        "__ansible_unsafe": "disabled"
+                    }
+                },
+                "network_interfaces": [
+                    {
+                        "attachment": {
+                            "attach_time": "2025-11-20T09:33:02+00:00",
+                            "attachment_id": {
+                                "__ansible_unsafe": "eni-attach-0d33a7cc57d45bc28"
+                            },
+                            "delete_on_termination": true,
+                            "device_index": 0,
+                            "network_card_index": 0,
+                            "status": {
+                                "__ansible_unsafe": "attached"
+                            }
+                        },
+                        "description": {
+                            "__ansible_unsafe": ""
+                        },
+                        "groups": [
+                            {
+                                "group_id": {
+                                    "__ansible_unsafe": "sg-006c52df1e27032ed"
+                                },
+                                "group_name": {
+                                    "__ansible_unsafe": "example_sg"
+                                }
+                            }
+                        ],
+                        "interface_type": {
+                            "__ansible_unsafe": "interface"
+                        },
+                        "ipv6_addresses": [],
+                        "mac_address": {
+                            "__ansible_unsafe": "06:9f:07:8c:62:f1"
+                        },
+                        "network_interface_id": {
+                            "__ansible_unsafe": "eni-0253bf61c502bba2d"
+                        },
+                        "operator": {
+                            "managed": false
+                        },
+                        "owner_id": {
+                            "__ansible_unsafe": "242201269239"
+                        },
+                        "private_ip_address": {
+                            "__ansible_unsafe": "10.0.1.143"
+                        },
+                        "private_ip_addresses": [
+                            {
+                                "primary": true,
+                                "private_ip_address": {
+                                    "__ansible_unsafe": "10.0.1.143"
+                                }
+                            }
+                        ],
+                        "source_dest_check": true,
+                        "status": {
+                            "__ansible_unsafe": "in-use"
+                        },
+                        "subnet_id": {
+                            "__ansible_unsafe": "subnet-092d7549536eb25d8"
+                        },
+                        "vpc_id": {
+                            "__ansible_unsafe": "vpc-06a223dc09c6adb16"
+                        }
+                    }
+                ],
+                "network_performance_options": {
+                    "bandwidth_weighting": {
+                        "__ansible_unsafe": "default"
+                    }
+                },
+                "operator": {
+                    "managed": false
+                },
+                "owner_id": {
+                    "__ansible_unsafe": "242201269239"
+                },
+                "placement": {
+                    "availability_zone": {
+                        "__ansible_unsafe": "eu-west-1a"
+                    },
+                    "availability_zone_id": {
+                        "__ansible_unsafe": "euw1-az2"
+                    },
+                    "group_name": {
+                        "__ansible_unsafe": ""
+                    },
+                    "region": {
+                        "__ansible_unsafe": "eu-west-1"
+                    },
+                    "tenancy": {
+                        "__ansible_unsafe": "default"
+                    }
+                },
+                "platform_details": {
+                    "__ansible_unsafe": "Linux/UNIX"
+                },
+                "private_dns_name": {
+                    "__ansible_unsafe": "ip-10-0-1-143.eu-west-1.compute.internal"
+                },
+                "private_dns_name_options": {
+                    "enable_resource_name_dns_a_record": false,
+                    "enable_resource_name_dns_aaaa_record": false,
+                    "hostname_type": {
+                        "__ansible_unsafe": "ip-name"
+                    }
+                },
+                "private_ip_address": {
+                    "__ansible_unsafe": "10.0.1.143"
+                },
+                "product_codes": [],
+                "public_dns_name": {
+                    "__ansible_unsafe": ""
+                },
+                "requester_id": {
+                    "__ansible_unsafe": ""
+                },
+                "reservation_id": {
+                    "__ansible_unsafe": "r-0967921ace7237ff8"
+                },
+                "root_device_name": {
+                    "__ansible_unsafe": "/dev/xvda"
+                },
+                "root_device_type": {
+                    "__ansible_unsafe": "ebs"
+                },
+                "security_groups": [
+                    {
+                        "group_id": {
+                            "__ansible_unsafe": "sg-006c52df1e27032ed"
+                        },
+                        "group_name": {
+                            "__ansible_unsafe": "example_sg"
+                        }
+                    }
+                ],
+                "source_dest_check": true,
+                "state": {
+                    "code": 16,
+                    "name": {
+                        "__ansible_unsafe": "running"
+                    }
+                },
+                "state_transition_reason": {
+                    "__ansible_unsafe": ""
+                },
+                "subnet_id": {
+                    "__ansible_unsafe": "subnet-092d7549536eb25d8"
+                },
+                "tags": {
+                    "Name": {
+                        "__ansible_unsafe": "SSM-enabled-instance"
+                    },
+                    "environment": {
+                        "__ansible_unsafe": "staging"
+                    }
+                },
+                "usage_operation": {
+                    "__ansible_unsafe": "RunInstances"
+                },
+                "usage_operation_update_time": "2025-11-20T09:33:02+00:00",
+                "virtualization_type": {
+                    "__ansible_unsafe": "hvm"
+                },
+                "vpc_id": {
+                    "__ansible_unsafe": "vpc-06a223dc09c6adb16"
+                }
+            }
+        },
+        "profile": "inventory_legacy"
+    },
+    "all": {
+        "children": [
+            "ungrouped",
+            "aws_ec2",
+            "tag_environment__staging"
+        ]
+    },
+    "aws_ec2": {
+        "hosts": [
+            "instance_id"
+        ]
+    },
+    "tag_environment__staging": {
+        "hosts": [
+            "instance_id"
+        ]
+    }
+}

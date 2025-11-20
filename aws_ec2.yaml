@@ -15,7 +15,7 @@ hostnames:
 
 keyed_groups:
   - key: tags.environment
-    prefix: tag_environment_
+    prefix: environment_
 
 compose:
   ansible_host: private_ip_address

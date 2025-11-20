@@ -59,7 +59,6 @@ resource "aws_security_group" "sg" {
   vpc_id      = aws_vpc.example_vpc.id # replace with your VPC ID
 
   
-
   egress {
     from_port   = 0
     to_port     = 0
