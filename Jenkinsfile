@@ -74,12 +74,12 @@ compose:
     }
   }
 }
+  stage('Run Ansible Playbook') {
+  steps {
+    sh 'ansible-playbook -i aws_ec2.yml install_roles.yml'
+  }
+  }
 
-    stage('Run Ansible Playbook') {
-      steps {
-        // Run ansible-playbook using the generated inventory and playbook file
-        sh 'ansible-playbook -i ssm_inventory.ini install_roles.yml'
-      }
-    }
+    
   }
 }

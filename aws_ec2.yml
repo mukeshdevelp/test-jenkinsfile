@@ -3,7 +3,7 @@ plugin: amazon.aws.aws_ec2
 regions:
   - eu-west-1
 filters:
-  tag:environment: staging  # or your specific tags
+  tag:environment: 'staging'  # or your specific tags
 hostnames:
   - instance-id  # or 'dns-name', 'public-ip-address', 'private-ip-address'
 compose:
