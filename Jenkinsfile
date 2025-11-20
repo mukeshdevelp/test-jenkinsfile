@@ -25,7 +25,7 @@ pipeline {
     stage('Terraform Apply') {
       steps {
         sh '''
-          terraform apply -auto-approve
+          terraform destroy -auto-approve
           terraform output -json > outputs.json
         '''
       }

@@ -642,3 +642,19 @@ tags
 2025-11-20 18:27:23,302 p=168365 u=mukesh n=ansible INFO| Nothing to do. All requested collections are already installed. If you want to reinstall them, consider using `--force`.
 2025-11-20 18:28:52,661 p=168909 u=mukesh n=ansible INFO| Starting galaxy collection install process
 2025-11-20 18:28:52,731 p=168909 u=mukesh n=ansible INFO| Nothing to do. All requested collections are already installed. If you want to reinstall them, consider using `--force`.
+2025-11-20 18:55:44,671 p=180907 u=mukesh n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2025-11-20 18:55:44,672 p=180907 u=mukesh n=ansible INFO| [DEPRECATION WARNING]: Passing `disable_lookups` to `template` is deprecated. This feature will be removed from ansible-core version 2.23.
+
+2025-11-20 18:55:44,686 p=180907 u=mukesh n=botocore.credentials INFO| Found credentials in shared credentials file: ~/.aws/credentials
+2025-11-20 18:55:45,911 p=180907 u=mukesh n=ansible INFO| @all:
+  |--@ungrouped:
+  |--@aws_ec2:
+2025-11-20 18:56:32,020 p=181219 u=mukesh n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2025-11-20 18:56:32,021 p=181219 u=mukesh n=ansible INFO| [DEPRECATION WARNING]: Passing `disable_lookups` to `template` is deprecated. This feature will be removed from ansible-core version 2.23.
+
+2025-11-20 18:56:32,035 p=181219 u=mukesh n=botocore.credentials INFO| Found credentials in shared credentials file: ~/.aws/credentials
+2025-11-20 18:56:33,154 p=181219 u=mukesh n=ansible INFO| @all:
+  |--@ungrouped:
+  |--@aws_ec2:
