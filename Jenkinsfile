@@ -66,6 +66,7 @@ pipeline {
           writeFile file: 'aws_ec2.yaml', text: '''
 ---
 plugin: amazon.aws.aws_ec2
+
 regions:
   - eu-west-1
 
@@ -84,6 +85,7 @@ keyed_groups:
 
 compose:
   ansible_host: private_ip_address
+
 '''
         }
       }

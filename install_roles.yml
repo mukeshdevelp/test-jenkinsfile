@@ -2,9 +2,10 @@
 - name: Configure EC2 instance via SSM
   hosts: tag_environment_staging
   gather_facts: yes
-  connection: aws_ssm   # Use the AWS SSM connection plugin for Ansible
+  connection:  community.aws.aws_ssm  # Use the AWS SSM connection plugin for Ansible
   become: yes
-  
+-
+
   tasks:
     - name: Install nginx
       package:
