@@ -55,6 +55,7 @@ pipeline {
     stage('Install AWS SDK for Python') {
   steps {
     sh '''
+    #!/bin/bash
        python3 -m venv venv
 source venv/bin/activate
 pip install boto3 botocore
