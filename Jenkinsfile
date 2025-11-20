@@ -52,6 +52,19 @@ pipeline {
         sh 'ansible-galaxy collection install community.aws'
       }
     }
+    stage('Install AWS SDK for Python') {
+  steps {
+    sh '''
+      python3 -m pip install --upgrade pip
+      python3 -m pip install boto3 botocore --user
+      
+      python3 -m venv venv
+source venv/bin/activate
+pip install boto3 botocore
+  
+    '''
+  }
+}
 
     stage('Create Dynamic Inventory') {
       steps {
