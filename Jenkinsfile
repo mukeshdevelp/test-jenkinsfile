@@ -39,8 +39,8 @@ pipeline {
     stage('Parse Terraform Outputs') {
       steps {
         script {
-          def outputs = readJSON file: 'outputs.json'
-          env.INSTANCE_ID = outputs.instance_id.value
+          def instanceId = sh(script: "terraform output -json instance_id | jq -r '.'", returnStdout: true).trim()
+          env.INSTANCE_ID = instanceId
           echo "Instance ID is ${env.INSTANCE_ID}"
         }
       }
