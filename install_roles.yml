@@ -4,9 +4,7 @@
   gather_facts: yes
   connection: aws_ssm   # Use the AWS SSM connection plugin for Ansible
   become: yes
-  vars:
-    ansible_python_interpreter: /usr/bin/python3
-
+  
   tasks:
     - name: Install nginx
       package:
