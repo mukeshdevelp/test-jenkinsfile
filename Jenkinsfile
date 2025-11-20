@@ -89,7 +89,7 @@ compose:
 }
   stage('Run Ansible Playbook') {
   steps {
-    sh 'ansible-playbook -i aws_ec2.yaml install_roles.yml'
+    sh 'ansible-playbook -i aws_ec2.yaml install_roles.yml -vvv'
   }
   }
 
