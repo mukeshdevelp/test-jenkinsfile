@@ -2,16 +2,28 @@
 - name: Configure EC2 instance via SSM
   hosts: tag_environment__staging
   gather_facts: yes
-  connection: amazon.aws.aws_ssm  # Correct SSM connection plugin
+  connection: amazon.aws.aws_ssm
   become: yes
 
   tasks:
-    
-    - name: Install nginx
-      commands:
+    - name: Check hostname via SSM
+      amazon.aws.aws_ssm:
+        targets: "{{ inventory_hostname }}"
+        document_name: AWS-RunShellScript
+        commands:
+          - hostname
+
+    - name: Install nginx via SSM
+      amazon.aws.aws_ssm:
+        targets: "{{ inventory_hostname }}"
+        document_name: AWS-RunShellScript
+        commands:
           - sudo yum install -y nginx
 
-    - name: Ensure nginx is running
-      commands:
+    - name: Ensure nginx is running via SSM
+      amazon.aws.aws_ssm:
+        targets: "{{ inventory_hostname }}"
+        document_name: AWS-RunShellScript
+        commands:
           - sudo systemctl enable nginx
           - sudo systemctl start nginx
